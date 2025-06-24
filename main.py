@@ -73,7 +73,7 @@ def test_greedy_accuracy(properties_df: pd.DataFrame, total_budget_rp: int,
 
 def main():
     # Configuration
-    budget = 5_000_000_000  # Total budget in Rp
+    budget = 10_000_000_000  # Total budget in Rp
     data_file = 'rumah123_2025_sale_modelled.csv'
     num_trials = 1000
     sample_size = 20
