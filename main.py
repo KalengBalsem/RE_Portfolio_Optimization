@@ -91,7 +91,7 @@ def main():
     # Perform comparative analysis once on full sample
     properties_sample = properties.sample(n=sample_size, random_state=42)
     summary_df = compare_algorithms(properties_sample, budget)
-    print("\nComparison of Algorithms on 200-sample:")
+    print("\nComparison of Algorithms on 20-sample:")
     print(summary_df.to_string(index=False))
 
     # Test greedy accuracy over multiple random trials
@@ -104,10 +104,10 @@ def main():
         best = valid.loc[best_idx]
         algo_name = str(best['Algorithm'])
         best_npv = best['Total NPV']
-        print(f"\nBest Algorithm on 200-sample: {algo_name} (NPV = Rp {best_npv:,.0f})")
+        print(f"\nBest Algorithm on 20-sample: {algo_name} (NPV = Rp {best_npv:,.0f})")
 
         # Show details of selected properties by best
-        print("\nDetails of Selected Properties by Best Algorithm on 200-sample:")
+        print("\nDetails of Selected Properties by Best Algorithm on 20-sample:")
         algorithm_map = {
             'Dynamic Programming': solve_portfolio_DP,
             'Greedy': solve_portfolio_greedy,
@@ -120,7 +120,7 @@ def main():
         else:
             print(f"Error: Unknown algorithm '{algo_name}'")
     else:
-        print("\nNo valid results to compare on 200-sample.")
+        print("\nNo valid results to compare on 20-sample.")
 
 
 if __name__ == "__main__":

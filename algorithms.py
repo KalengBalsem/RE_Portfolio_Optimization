@@ -2,7 +2,7 @@ import numpy as np
 import itertools
 
 def solve_portfolio_DP(properties_df, total_budget_rp):
-    BASE_UNIT = 1_000_000 # Base unit for discretization (e.g., 1 million Rp)
+    BASE_UNIT = 1_000_000 # Base unit for discretization (e.g., 100 thousand Rp)
 
     # round weights to nearest unit
     weights = (properties_df['price_in_rp'] / BASE_UNIT).astype(int)
