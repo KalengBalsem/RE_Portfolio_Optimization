@@ -10,7 +10,7 @@ def solve_portfolio_DP(properties_df, total_budget_rp):
     budget_d = int(round(total_budget_rp / BASE_UNIT))
     n_items = len(properties_df)
 
-    # USE 1D DP Array + 'keep' mask for backtracking. More efficient than 2D DP array. O(nB) -> O(B).
+    # USE 1D DP Array + 'keep' mask for backtracking.
     dp = np.zeros(budget_d + 1)
     keep = np.zeros((n_items, budget_d + 1), dtype=bool)
 

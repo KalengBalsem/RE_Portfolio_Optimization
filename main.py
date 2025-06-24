@@ -52,21 +52,22 @@ def compare_algorithms(properties_df: pd.DataFrame, total_budget_rp: int) -> pd.
 
 
 def test_greedy_accuracy(properties_df: pd.DataFrame, total_budget_rp: int,
-                         num_tests: int = 100, sample_size: int = 50) -> None:
+                         num_tests: int = 100, sample_size: int = 20) -> None:
     """
     Run multiple trials sampling random subsets and compare Greedy vs DP.
     Prints the number and rate of times Greedy yields suboptimal NPV.
     """
     failures = 0
     for i in range(num_tests):
-        sample = properties_df.sample(n=sample_size, random_state=random.randint(0, 1_000_000))
+        random_seed = random.randint(0, 1_000_000)
+        sample = properties_df.sample(n=sample_size, random_state=random_seed)
         dp_npv, _, _ = solve_portfolio_DP(sample, total_budget_rp)
         greedy_npv, _, _ = solve_portfolio_greedy(sample, total_budget_rp)
         if greedy_npv < dp_npv:
             failures += 1
 
     print(f"\nGreedy vs DP Accuracy over {num_tests} trials:")
-    print(f"Greedy was suboptimal {failures} times ({failures/num_tests:.2%} failure rate)")
+    print(f" suboptimal {failures} times ({failures/num_tests:.2%} failure rate)")
     print(f"Greedy matched DP {num_tests - failures} times ({(num_tests-failures)/num_tests:.2%} success rate)")
 
 
@@ -74,8 +75,8 @@ def main():
     # Configuration
     budget = 5_000_000_000  # Total budget in Rp
     data_file = 'rumah123_2025_sale_modelled.csv'
-    num_trials = 100
-    sample_size = 50
+    num_trials = 1000
+    sample_size = 20
 
     # Load and preprocess
     df = load_properties_data(data_file)
@@ -88,7 +89,7 @@ def main():
     print("=" * 60)
 
     # Perform comparative analysis once on full sample
-    properties_sample = properties.sample(n=200, random_state=42)
+    properties_sample = properties.sample(n=sample_size, random_state=42)
     summary_df = compare_algorithms(properties_sample, budget)
     print("\nComparison of Algorithms on 200-sample:")
     print(summary_df.to_string(index=False))
