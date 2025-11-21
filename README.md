@@ -1,5 +1,7 @@
 # Real Estate Portfolio Optimization in Jabodetabek
 
+<img width="968" height="412" alt="Screenshot 2025-11-21 151927" src="https://github.com/user-attachments/assets/1c79b564-60e6-4421-9fd7-44afb40cc524" />
+
 This project applies machine learning and dynamic programming to forecast and optimize real estate investments in the Jabodetabek region. It combines XGBoost-based prediction models for rent and property appreciation with a knapsack optimization algorithm to maximize Net Present Value (NPV) under a fixed budget.
 (NOTE: This project is for academic and educational purposes. Not intended as financial advice or investment recommendation.)
 
@@ -92,4 +94,3 @@ See `requirements.txt` for the full list. Key packages:
 | Name           | NIM      | Class  |
 |----------------|----------|--------|
 | Asybel Bintang | 15223011 | K1     |
-<img width="958" height="682" alt="Screenshot 2025-11-21 151654" src="https://github.com/user-attachments/assets/a43d42ed-7943-4a59-8720-d387425f977e" />
