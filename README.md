@@ -92,3 +92,4 @@ See `requirements.txt` for the full list. Key packages:
 | Name           | NIM      | Class  |
 |----------------|----------|--------|
 | Asybel Bintang | 15223011 | K1     |
+<img width="958" height="682" alt="Screenshot 2025-11-21 151654" src="https://github.com/user-attachments/assets/a43d42ed-7943-4a59-8720-d387425f977e" />
